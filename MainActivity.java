@@ -18,14 +18,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private String dodatki = "";
-    CheckBox boxSer = findViewById(R.id.ser);
-    CheckBox boxSzynka = findViewById(R.id.szynka);
-    CheckBox boxPieczarki = findViewById(R.id.pieczarki);
-    CheckBox rabat = findViewById(R.id.studentskiRabat);
-    RadioGroup radioGroupRozmiar = findViewById(R.id.radioGroupRozmiar);
-    Button butt = findViewById(R.id.butt);
-    Button butt2 = findViewById(R.id.wyczysc);
-    RadioGroup radioSos = findViewById(R.id.wyborSosu);
+    CheckBox boxSer, boxSzynka, boxPieczarki, rabat;
+    RadioGroup radioGroupRozmiar, radioSos;
+    Button butt1, butt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +28,14 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        boxSer = findViewById(R.id.ser);
+        boxSzynka = findViewById(R.id.szynka);
+        boxPieczarki = findViewById(R.id.pieczarki);
+        rabat = findViewById(R.id.studentskiRabat);
+        radioGroupRozmiar = findViewById(R.id.radioGroupRozmiar);
+        radioSos = findViewById(R.id.wyborSosu);
+        butt1 = findViewById(R.id.butt);
+        butt2 = findViewById(R.id.wyczysc);
 
         rabat.setOnClickListener(v -> {
             if(rabat.isChecked()){
@@ -41,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Znizka zostala wylaczona", Toast.LENGTH_SHORT).show();
             }
         });
-        butt.setOnClickListener(v -> {
+        butt1.setOnClickListener(v -> {
             aktualizujCene();
         });
         butt2.setOnClickListener(v -> clear());
@@ -78,20 +81,26 @@ public class MainActivity extends AppCompatActivity {
         final double CENA_MALA = 20.0;
         final double CENA_SREDNIA = 30.0;
         final double CENA_DUZA = 40.0;
-        RadioGroup radioGroupRozmiar = findViewById(R.id.radioGroupRozmiar);
         int wybranyRozmiarId = radioGroupRozmiar.getCheckedRadioButtonId();
-        if (wybranyRozmiarId == R.id.radioMala) {
-            wynik = CENA_MALA;
-            dodatki+="Rozmiar maly ";
-        } else if (wybranyRozmiarId == R.id.radioSrednia) {
-            wynik = CENA_SREDNIA;
-            dodatki+="Rozmiar sredni ";
-        } else if (wybranyRozmiarId == R.id.radioDuza) {
-            wynik = CENA_DUZA;
-            dodatki+="Rozmiar duzy ";
+        if (wybranyRozmiarId != -1) {
+            RadioButton wybranyButton = findViewById(wybranyRozmiarId);
+            String tag = wybranyButton.getTag().toString();
+            switch (tag) {
+                case "mala":
+                    wynik = CENA_MALA;
+                    dodatki += " Mala pizza";
+                    break;
+                case "srednia":
+                    wynik = CENA_SREDNIA;
+                    dodatki += " Srednia pizza";
+                    break;
+                case "duza":
+                    wynik = CENA_DUZA;
+                    dodatki += " Duza pizza";
+                    break;
+            }
         }
-
-        int wybranySos = radioSos.getCheckedRadioButtonId();
+        int wybranySosId = radioSos.getCheckedRadioButtonId();
         if(boxSer.isChecked()){
             wynik+=2.0;
             dodatki+="dodatkowy ser ";
@@ -104,21 +113,28 @@ public class MainActivity extends AppCompatActivity {
             wynik+=2.0;
             dodatki+="dodatkowe pieczarki ";
         }
-        if(wybranySos == R.id.sosCzosnkowy){
-            wynik+=2.0;
-            dodatki+="dodatkowy sos czosnkowy ";
-        }else if(wybranySos == R.id.sosPomidorowy){
-            wynik+=2.0;
-            dodatki+="dodatkowy sos pomidorowy ";
+        if(wybranySosId != -1) {
+            RadioButton wybranySos = findViewById(wybranySosId);
+            String tagSos = wybranySos.getTag().toString();
+            switch (tagSos) {
+                case "czosnkowy":
+                    wynik += 2.0;
+                    dodatki += " czosnkowy sos";
+                    break;
+                case "pomidorowy":
+                    wynik += 2.0;
+                    dodatki += " pomidorowy sos";
+                    break;
+            }
         }
         return wynik;
     }
     private void clear(){
-        dodatki = "";
         boxPieczarki.setChecked(false);
         boxSzynka.setChecked(false);
         boxSer.setChecked(false);
-        radioSos.check(R.id.bezSosu);
+        radioSos.check(R.id.brakSosu);
+        aktualizujCene();
     }
 
 }
