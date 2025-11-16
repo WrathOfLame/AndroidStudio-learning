@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_primary">#0D47A1</color> <!-- Ciemnoniebieski -->
+    <color name="brand_secondary">#FF6F00</color> <!-- Pomarańczowy -->
+    <color name="text_primary">#212121</color> <!-- Ciemnoszary dla tekstu -->
+    <color name="background_light">#FAFAFA</color> <!-- Jasnoszare tło -->
+    <color name="white">#FFFFFF</color>
+</resources>
