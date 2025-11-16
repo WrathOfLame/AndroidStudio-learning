@@ -1,1 +1,42 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.LaboratoriumStyli" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 
+    <style name="Theme.LaboratoriumStyli" parent="Base.Theme.LaboratoriumStyli" />
+
+    <style name="PrzyciskGlowny">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:backgroundTint">@color/przycisk_niebieski</item>
+        <item name="android:textColor">@color/przycisk_tekst_bialy</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PrzyciskGlowny.Anuluj">
+        <item name="android:background">@drawable/obramowanie_edittext</item>
+    </style>
+    <style name="editText">
+        <item name="android:hint">Wprowadz dane</item>
+        <item name="android:textColorHint">@color/hintColor</item>
+        <item name="android:width">500dp</item>
+        <item name="android:height">70dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+    <style name="pageHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name = "android:textColor">@color/textViewColor</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+</resources>
