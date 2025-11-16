@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="przycisk_niebieski">#0D47A1</color>
+    <color name="przycisk_tekst_bialy">#FFFFFF</color>
+    <color name="textViewColor">#2F4F4F</color>
+    <color name="greyButt">#686868</color>
+    <color name="hintColor">#707070</color>
+</resources>
