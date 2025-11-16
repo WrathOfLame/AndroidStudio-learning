@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <EditText
+        android:id="@+id/kwotaRachunku"
+        android:hint="Kwota rachunku"
+        android:inputType="numberDecimal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <RadioGroup
+        android:id="@+id/grupaNapiwku"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/proc15"
+            android:text="15%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/proc20"
+            android:text="20% (domyślne)"
+            android:checked="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/proc25"
+            android:text="25%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/oblicz"
+        android:text="Oblicz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/wynikNapiwku"
+        android:textSize="18sp"
+        android:text=""
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/wynikCalkowity"
+        android:textSize="18sp"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
