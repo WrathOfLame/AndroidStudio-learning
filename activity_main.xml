@@ -1,145 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Konfigurator Pizzy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tekstPodstawowaCena"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wybierz rozmiar:"
-        android:layout_marginTop="16dp"/>
-
-    <RadioGroup
-        android:id="@+id/radioGroupRozmiar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/radioMala"
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/poleImie"
+            android:hint="Imię postaci"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mała (20 PLN)"
-            android:tag="mala"
-            />
+            android:text="Płeć:" />
 
-        <RadioButton
-            android:id="@+id/radioSrednia"
+        <RadioGroup
+            android:id="@+id/radioGroupPlec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radioKobieta"
+                android:text="Kobieta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/radioMezczyzna"
+                android:text="Mężczyzna"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RadioGroup>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Średnia (30 PLN)"
-            android:checked="true"
-            android:tag="srednia"
-            />
+            android:text="Rasa:" />
 
-        <RadioButton
-            android:id="@+id/radioDuza"
+        <Spinner
+            android:id="@+id/spinnerRasa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Duża (40 PLN)"
-            android:tag="duza"
-            />
-    </RadioGroup>
+            android:text="Umiejętności:" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wybierz dodatki (każdy +3.00 PLN): "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <CheckBox
+            android:id="@+id/chkWlam"
+            android:text="Włamywanie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dodatkowy ser"
-        android:id="@+id/ser"
-        />
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dodatkowa szynka"
-        android:id="@+id/szynka"
-        />
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dodatkowe pieczarki"
-        android:id="@+id/pieczarki"
-        />
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/wyborSosu"
-        android:orientation="horizontal">
-        <RadioButton
+        <CheckBox
+            android:id="@+id/chkAlch"
+            android:text="Alchemia"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sosCzosnkowy"
-            android:text="Sos czosnkowy"
-            android:tag="czosnkowy"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/sosPomidorowy"
-            android:text="Sos pomidorowy"
-            android:tag="pomidorowy"
-            />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/brakSosu"
-            android:text="Bez sosu"
-            android:checked="true"
-            android:tag="brakSosu"
-            />
-    </RadioGroup>
-    <CheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/studentskiRabat"
-        android:text="Studentski rabat"
-        />
+            android:layout_height="wrap_content"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/butt"
-        android:text="Policz"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/wyczysc"
-        android:text="Wyczysc"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cenaWynikowa"
-        />
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/chkKowal"
+            android:text="Kowalstwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnStworz"
+            android:text="Stwórz postać"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnReset"
+            android:text="Resetuj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/wynik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:paddingTop="20dp" />
+
+    </LinearLayout>
+
+</ScrollView>
