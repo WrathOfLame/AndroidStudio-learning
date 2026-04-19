@@ -5,7 +5,7 @@ public class Wydatek{
 
     public Wydatek(String nazwa, double kwota, String kategoria){
         this.nazwa = nazwa;
-        double kwota = kwota;
+        this.kwota = kwota;
         this.kategoria = kategoria;
     }
 }
